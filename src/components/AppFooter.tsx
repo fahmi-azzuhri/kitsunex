@@ -8,7 +8,7 @@ export function AppFooter() {
         <span className="brand-mark">
           <img src={logo} alt="" />
         </span>
-        <strong>Nganime</strong>
+        <strong>Kitsunex</strong>
       </div>
       <span>Press play. Enter another world.</span>
       <a

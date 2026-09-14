@@ -32,7 +32,7 @@ export function AppHeader({ currentTitle, onNavigate }: AppHeaderProps) {
           <img src={logo} alt="" />
         </span>
         <span>
-          Ng<span>anime</span>
+          Kits<span>unex</span>
         </span>
       </button>
       <nav className={menuOpen ? "nav-links open" : "nav-links"}>
