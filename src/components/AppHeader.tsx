@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CalendarDays, Flame, Home, Menu, Search, Tv2, X } from "lucide-react";
+import logo from "../assets/nganime.png";
 
 type AppHeaderProps = {
   currentTitle: string;
@@ -28,7 +29,7 @@ export function AppHeader({ currentTitle, onNavigate }: AppHeaderProps) {
         aria-label="Nganime home"
       >
         <span className="brand-mark">
-          <Tv2 size={20} />
+          <img src={logo} alt="" />
         </span>
         <span>
           Ng<span>anime</span>

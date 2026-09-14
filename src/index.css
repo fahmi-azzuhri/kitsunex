@@ -27,7 +27,8 @@
   .topbar { @apply mx-auto flex h-[82px] max-w-[1240px] items-center gap-[38px] border-b border-white/10 px-7; }
   .brand { @apply flex items-center gap-2.5 bg-transparent font-display text-xl font-bold tracking-tight; }
   .brand > span:last-child > span { @apply text-lime; }
-  .brand-mark { @apply grid size-8 place-items-center rounded-[9px] bg-lime text-page; }
+  .brand-mark { @apply grid size-8 place-items-center overflow-hidden rounded-[9px] bg-lime text-page; }
+  .brand-mark img { @apply size-full object-contain; }
   .nav-links { @apply flex flex-1 gap-1.5; }
   .nav-link { @apply inline-flex items-center gap-1.5 rounded-lg bg-transparent px-[13px] py-2.5 text-sm text-muted transition-colors; }
   .nav-link:hover, .nav-link.active { @apply bg-white/5 text-ink; }
