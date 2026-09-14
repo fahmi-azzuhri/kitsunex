@@ -860,11 +860,21 @@ function WatchPage({
         <ArrowLeft size={17} /> Back to home
       </button>
       <div className="video-frame">
-        <div className="video-placeholder">
-          <CirclePlay size={58} strokeWidth={1.2} />
-          <span>Choose a download source below</span>
-          <small>Streaming source from the connected API</small>
-        </div>
+        {episode.embedUrl ? (
+          <iframe
+            className="video-player"
+            src={episode.embedUrl}
+            title={episode.title || `Episode ${episode.eps}`}
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+          />
+        ) : (
+          <div className="video-placeholder">
+            <CirclePlay size={58} strokeWidth={1.2} />
+            <span>Streaming source belum tersedia</span>
+            <small>Pilih mirror resolusi di bawah</small>
+          </div>
+        )}
       </div>
       <div className="watch-heading">
         <div>

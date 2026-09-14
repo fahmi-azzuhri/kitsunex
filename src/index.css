@@ -82,9 +82,10 @@
   .loading { @apply grid min-h-[60vh] place-content-center justify-items-center gap-3.5 text-muted; }
   .loader { @apply size-[26px] animate-spin rounded-full border-2 border-white/10 border-t-lime; }
   .back-button { @apply mb-[30px] flex items-center gap-1.5 bg-transparent p-0 text-[13px] text-muted hover:text-lime; }
-  .detail-hero { @apply grid grid-cols-[215px_1fr_auto] items-center gap-[42px] border-b border-white/10 pb-[60px]; }
-  .detail-poster { @apply aspect-[2/2.85] w-[215px] rounded-lg object-cover; }
-  .detail-copy { @apply max-w-[650px]; }
+  .detail-page { @apply pb-10; }
+  .detail-hero { @apply relative grid grid-cols-[215px_minmax(0,1fr)_auto] items-center gap-[42px] border-b border-white/10 pb-[60px]; }
+  .detail-poster { @apply block aspect-[2/2.85] w-[215px] shrink-0 rounded-lg object-cover; }
+  .detail-copy { @apply min-w-0 max-w-[650px]; }
   .detail-copy h1 { @apply my-[13px] mb-4 max-w-[700px] text-[clamp(36px,5vw,62px)]; }
   .detail-copy > p { @apply my-6 mb-[17px] max-w-[620px] text-sm leading-[1.65] text-[#aeb8b0]; }
   .genre-list { @apply mb-[27px] flex flex-wrap gap-1.5; }
@@ -92,15 +93,16 @@
   .save-button { @apply grid size-[38px] place-items-center self-start rounded-[7px] border border-white/10 bg-transparent text-muted hover:border-lime hover:text-lime; }
   .episode-section { @apply py-10 pb-[75px]; }
   .episode-grid { @apply grid grid-cols-3 gap-2; }
-  .episode-item { @apply grid min-h-[62px] grid-cols-[53px_1fr_17px] grid-rows-2 items-center gap-x-2.5 gap-y-[3px] rounded-md border border-white/10 bg-panel p-[13px_14px] text-left text-ink hover:border-lime/60 hover:bg-panel-light; }
+  .episode-item { @apply grid min-h-[88px] min-w-0 grid-cols-[53px_minmax(0,1fr)_70px_17px] grid-rows-2 items-center gap-x-2.5 gap-y-[3px] rounded-md border border-white/10 bg-panel p-[13px_14px] text-left text-ink hover:border-lime/60 hover:bg-panel-light; }
   .episode-item > span { @apply row-span-2 text-[11px] font-bold text-lime; }
-  .episode-item strong { @apply overflow-hidden text-ellipsis whitespace-nowrap font-display text-[13px] font-semibold; }
-  .episode-item small { @apply text-[10px] text-muted; }
-  .episode-item svg { @apply col-start-3 row-span-2 text-muted; }
+  .episode-item strong { @apply col-start-2 row-span-2 row-start-1 min-w-0 self-center overflow-hidden text-center text-ellipsis whitespace-nowrap font-display text-[13px] font-semibold; }
+  .episode-item small { @apply col-start-3 row-span-2 row-start-1 text-right text-[10px] leading-[1.45] text-muted; }
+  .episode-item svg { @apply col-start-4 row-span-2 row-start-1 text-muted; }
   .page-heading { @apply pb-7; }
   .page-heading h1 { @apply text-5xl; }
   .watch-page { @apply pb-[72px]; }
   .video-frame { @apply grid aspect-video place-items-center rounded-lg border border-white/10 bg-[#080a09]; }
+  .video-player { @apply block size-full rounded-lg border-0; }
   .video-placeholder { @apply grid justify-items-center gap-2 text-lime; }
   .video-placeholder span { @apply font-display text-[15px] font-semibold text-ink; }
   .video-placeholder small { @apply text-[11px] text-muted; }
@@ -165,10 +167,10 @@
   .content-section, .content-page, .detail-page, .watch-page { @apply px-[18px]; }
   .anime-grid { @apply grid-cols-3 gap-[13px]; }
   .anime-grid .anime-card:nth-child(n+4) { @apply hidden; }
-  .detail-hero { @apply grid-cols-[135px_1fr] items-start gap-[22px]; }
+  .detail-hero { @apply grid-cols-[135px_minmax(0,1fr)] items-start gap-[22px]; }
   .detail-poster { @apply w-[135px]; }
   .detail-copy h1 { @apply text-[32px] tracking-[-1.5px]; }
-  .save-button { @apply absolute right-[18px]; }
+  .save-button { @apply absolute right-0 top-0; }
   .episode-grid { @apply grid-cols-2; }
   footer { @apply mx-[18px]; }
 }
@@ -183,13 +185,16 @@
   .card-info small, .latest-release-row > small { @apply hidden; }
   .latest-release-row { @apply grid-cols-[46px_1fr_18px] gap-2.5; }
   .latest-release-thumb { @apply h-[52px] w-[46px]; }
-  .detail-hero { @apply grid-cols-[100px_1fr] gap-[15px]; }
+  .detail-hero { @apply grid-cols-[100px_minmax(0,1fr)] gap-[15px]; }
   .detail-poster { @apply w-[100px]; }
   .detail-copy h1 { @apply mt-2 text-2xl; }
   .detail-stats { @apply flex-wrap gap-2 text-[11px]; }
   .detail-copy > p { @apply my-3.5 text-xs; }
   .episode-grid { @apply grid-cols-1; }
-  .episode-item { @apply min-h-[62px]; }
+  .episode-item { @apply min-h-[72px] grid-cols-[45px_minmax(0,1fr)_17px]; }
+  .episode-item strong { @apply text-left; }
+  .episode-item small { @apply col-start-2 row-start-2 text-left; }
+  .episode-item svg { @apply col-start-3; }
   .watch-heading { @apply items-start gap-[15px]; }
   .watch-heading .button { @apply p-[9px] text-[0px]; }
   .source-row { @apply grid-cols-[52px_1fr]; }

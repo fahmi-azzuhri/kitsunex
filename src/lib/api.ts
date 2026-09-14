@@ -35,6 +35,7 @@ export type EpisodeDetail = {
   eps: string;
   date_uploaded: string;
   detail_anime: Anime;
+  embedUrl?: string;
   downloadEps: Array<{
     format: string;
     data: Array<{ quality: string; link: Record<string, string> }>;
