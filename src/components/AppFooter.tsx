@@ -12,7 +12,7 @@ export function AppFooter() {
       </div>
       <span>Press play. Enter another world.</span>
       <a
-        href="https://github.com/fahmi-azzuhri/nganime"
+        href="https://github.com/fahmi-azzuhri/kitsunex"
         target="_blank"
         rel="noreferrer"
       >
