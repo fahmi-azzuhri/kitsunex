@@ -102,11 +102,14 @@
   .page-heading { @apply pb-7; }
   .page-heading h1 { @apply text-5xl; }
   .watch-page { @apply pb-[72px]; }
-  .video-frame { @apply grid aspect-video place-items-center rounded-lg border border-white/10 bg-[#080a09]; }
+  .video-frame { @apply relative grid aspect-video place-items-center rounded-lg border border-white/10 bg-[#080a09]; }
   .video-player { @apply block size-full rounded-lg border-0; }
   .video-placeholder { @apply grid justify-items-center gap-2 text-lime; }
   .video-placeholder span { @apply font-display text-[15px] font-semibold text-ink; }
   .video-placeholder small { @apply text-[11px] text-muted; }
+  .fullscreen-button { @apply absolute bottom-3 right-3 z-10 grid size-9 place-items-center rounded-md border border-white/15 bg-black/70 text-ink hover:border-lime hover:text-lime; }
+  .video-frame:fullscreen { @apply size-full rounded-none border-0; }
+  .video-frame:fullscreen .video-player { @apply rounded-none; }
   .watch-heading { @apply flex items-end justify-between border-b border-white/10 py-[27px]; }
   .watch-heading h1 { @apply my-2.5 mb-2 text-[clamp(28px,4vw,44px)]; }
   .watch-heading p { @apply text-[13px] text-muted; }
@@ -202,6 +205,11 @@
   .source-row small { @apply col-start-2; }
   .watch-heading h1 { @apply text-[26px]; }
   .watch-heading p { @apply leading-[1.6]; }
+  .top-home-card { @apply relative grid-cols-[36px_1fr] justify-items-center; }
+  .top-home-card > img { @apply h-[92px] w-full; }
+  .top-home-copy { @apply absolute right-2 top-2; }
+  .top-home-copy strong { @apply hidden; }
+  .top-home-copy small { @apply rounded bg-page/85 px-1.5 py-1 text-[11px]; }
   .schedule-grid, .library-list { @apply grid-cols-1; }
   .pagination { @apply gap-1; }
   .pagination .button { @apply px-[11px] py-2.5; }

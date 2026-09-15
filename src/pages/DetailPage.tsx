@@ -50,10 +50,8 @@ export function DetailPage({ detail, navigate }: DetailPageProps) {
           <button
             className="button primary"
             onClick={() =>
-              detail.list_episode?.[detail.list_episode.length - 1] &&
-              navigate(
-                `/watch/${detail.list_episode[detail.list_episode.length - 1].id}`,
-              )
+              detail.list_episode?.[0] &&
+              navigate(`/watch/${detail.list_episode[0].id}`)
             }
           >
             <CirclePlay size={18} fill="currentColor" /> Watch latest

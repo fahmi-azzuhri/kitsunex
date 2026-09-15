@@ -4,7 +4,9 @@ import {
   ChevronRight,
   CirclePlay,
   Download,
+  Maximize,
 } from "lucide-react";
+import { useRef } from "react";
 import type { EpisodeDetail } from "../lib/api";
 import { Loading } from "../components/Loading";
 import { SectionHeading } from "../components/SectionHeading";
@@ -15,6 +17,7 @@ type WatchPageProps = {
 };
 
 export function WatchPage({ episode, navigate }: WatchPageProps) {
+  const videoFrameRef = useRef<HTMLDivElement>(null);
   if (!episode) return <Loading />;
   const sources =
     episode.downloadEps?.flatMap((format) =>
@@ -25,13 +28,14 @@ export function WatchPage({ episode, navigate }: WatchPageProps) {
       <button className="back-button" onClick={() => navigate("/")}>
         <ArrowLeft size={17} /> Back to home
       </button>
-      <div className="video-frame">
+      <div className="video-frame" ref={videoFrameRef}>
         {episode.embedUrl ? (
           <iframe
             className="video-player"
             src={episode.embedUrl}
             title={episode.title || `Episode ${episode.eps}`}
             allow="autoplay; fullscreen; picture-in-picture"
+            sandbox="allow-forms allow-orientation-lock allow-pointer-lock allow-presentation allow-scripts allow-same-origin"
             allowFullScreen
           />
         ) : (
@@ -41,6 +45,20 @@ export function WatchPage({ episode, navigate }: WatchPageProps) {
             <small>Pilih mirror resolusi di bawah</small>
           </div>
         )}
+        <button
+          className="fullscreen-button"
+          aria-label="Toggle fullscreen"
+          title="Fullscreen"
+          onClick={() => {
+            if (document.fullscreenElement) {
+              void document.exitFullscreen();
+            } else {
+              void videoFrameRef.current?.requestFullscreen();
+            }
+          }}
+        >
+          <Maximize size={18} />
+        </button>
       </div>
       <div className="watch-heading">
         <div>
